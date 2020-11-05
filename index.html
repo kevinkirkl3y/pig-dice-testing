@@ -10,7 +10,7 @@
   <title>Pig Die!</title>
 </head>
 <body>
-  <div class="container">
+  <div class="container" id ="gameField">
     <div id="instructions">
       <h3>How to play:</h3>
       <p>[Instructions]</p>
@@ -27,7 +27,7 @@
         <div class="col-6">
           <div id="player1">
             <h1><span class="nameOne">Player 1</span></h1>
-            <p>Turn:</p>
+            <p>Turn: <span id="turnOne"></span></p>
             <p>Roll:<span id="rollResult-1"></span></p>
             <p>Turn Score:<span id="turnScore-1"></span></p>
             <form id="player1Play">
@@ -41,7 +41,7 @@
         <div class="col-6">
           <div id="player2">
             <h1><span class="nameTwo">Player 2</span></h1>
-            <p>Turn:</p>
+            <p>Turn: <span id="turnTwo"></span></p>
             <p>Roll:<span id="rollResult-2"></span></p>
             <p>Turn Score:<span id="turnScore-2"></span></p>
             <form id="player2Play">
@@ -64,6 +64,12 @@
         </div>
       </div>
     </div>  
+  </div>
+  <div class="container" id="gameResult">
+    <p><span id="winnerName"></span> is the winner!</p>
+    <form id="resetGame">
+      <button type="submit" class="btn btn-outline-primary">Play Again!</button>
+    </form>
   </div>
 </body>
 </html>
