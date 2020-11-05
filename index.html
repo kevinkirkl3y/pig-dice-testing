@@ -10,45 +10,55 @@
   <title>Pig Die!</title>
 </head>
 <body>
+  <div class="jumbotron">
+    <h1 class="display-4">Pig Dice</h1>
+    <img src="img/dice.png" alt="vector image of a single die">
+  </div>
   <div class="container" id ="gameField">
     <div id="instructions">
       <h3>How to play:</h3>
-      <p>[Instructions]</p>
+      <p>Each turn, a player repeatedly rolls a die until either a 1 is rolled or the player decides to "hold".The first player to score 100 or more points wins. </p>
+      <ul>
+        <li>Enter each player's name and press "Play!"</li>
+        <li>When it is your turn, click "Roll" to roll your die.</li>
+        <li>Click "Hold" if you would like to hold your current turn score and add it to your total points.</li>
+        <li> Be careful, if you roll a 1 your turn will automatically end and you will receive no points.</li>
+      </ul>
       <form id="enterName">
         <label for="name">Enter Player 1's name:</label>
         <input type="text" id="playerOneName">
         <label for="name">Enter Player 2's name:</label>
         <input type="text" id="playerTwoName">
-        <button type="submit" class="btn btn-outline-primary">Submit</button>
+        <button type="submit" class="btn btn-outline-warning">Play!</button>
       </form>
     </div>
     <div class="container">
       <div class="row">
-        <div class="col-6">
+        <div class="col-4">
           <div id="player1">
             <h1><span class="nameOne">Player 1</span></h1>
             <p>Turn: <span id="turnOne"></span></p>
             <p>Roll:<span id="rollResult-1"></span></p>
             <p>Turn Score:<span id="turnScore-1"></span></p>
             <form id="player1Play">
-              <button type="submit" class="btn btn-outline-primary">Roll</button>
+              <button type="submit" class="btn btn-outline-success">Roll</button>
             </form>
             <form id="player1Hold">
-            <button type="submit" class="btn btn-outline-primary">Hold</button>
+            <button type="submit" class="btn btn-outline-danger">Hold</button>
             </form>
           </div>
         </div>
-        <div class="col-6">
+        <div class="col-4">
           <div id="player2">
             <h1><span class="nameTwo">Player 2</span></h1>
             <p>Turn: <span id="turnTwo"></span></p>
             <p>Roll:<span id="rollResult-2"></span></p>
             <p>Turn Score:<span id="turnScore-2"></span></p>
             <form id="player2Play">
-              <button type="submit" class="btn btn-outline-primary">Roll</button>
+              <button type="submit" class="btn btn-outline-success">Roll</button>
             </form>
             <form id="player2Hold">
-            <button type="submit" class="btn btn-outline-primary">Hold</button>
+            <button type="submit" class="btn btn-outline-danger">Hold</button>
             </form>
           </div>
         </div>
@@ -56,10 +66,10 @@
       <div class="container">
         <div class="row">
           <div class="col-6">
-            <h3><span class="nameOne">Player One</span> has a total of <span id="total-1">0</span> points.</h3>
+            <h3 class="resultsFont"><span class="nameOne">Player One</span> has a total of <em><span id="total-1">0</span></em> points.</h3>
           </div>
           <div class="col-6">
-            <h3><span class="nameTwo">Player 2</span> has a total of <span id="total-2">0</span> points.</h3>
+            <h3 class="resultsFont"><span class="nameTwo">Player 2</span> has a total of <em><span id="total-2">0</span></em> points.</h3>
           </div>
         </div>
       </div>
@@ -68,7 +78,7 @@
   <div class="container" id="gameResult">
     <p><span id="winnerName"></span> is the winner!</p>
     <form id="resetGame">
-      <button type="submit" class="btn btn-outline-primary">Play Again!</button>
+      <button type="submit" class="btn btn-outline-info">Play Again!</button>
     </form>
   </div>
 </body>

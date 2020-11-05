@@ -4,7 +4,7 @@ let player2 = new Player ();
 function Player() {
   this.turnCount = 1;
   this.turnScore = 0;
-  this.totalScore = 90;
+  this.totalScore = 0;
   this.currentRoll;
 }
 
@@ -39,8 +39,8 @@ function endTurnPlayerOne() {
     $("#rollResult-1").html(" ");
     $("#turnScore-1").html(" ");
     $("#total-1").html(player1.totalScore);
-    $("#player1").hide();
-    $("#player2").show();
+    $("#player1").slideUp();
+    $("#player2").slideDown();
     $("#turnOne").html(player1.turnCount);
   }
 }
@@ -55,8 +55,8 @@ function endTurnPlayerTwo() {
     $("#rollResult-2").html(" ");
     $("#turnScore-2").html(" ");
     $("#total-2").html(player2.totalScore);
-    $("#player2").hide();
-    $("#player1").show();
+    $("#player2").slideUp();
+    $("#player1").slideDown();
     $("#turnTwo").html(player2.turnCount);
   }
 }
@@ -64,12 +64,13 @@ function endTurnPlayerTwo() {
 $(document).ready(function() {
   $("form#enterName").submit(function(event) {
     event.preventDefault();
+    $("#instructions").slideUp();
     $(".nameOne").text($("input#playerOneName").val());
     $(".nameTwo").text($("input#playerTwoName").val());
     $("#turnOne").html(player1.turnCount);
     $("#turnTwo").html(player2.turnCount);
-    $("#player2").hide();
-    $("#player1").show();
+    $("#player2").slideUp();
+    $("#player1").slideDown();
   });
 
   $("form#player1Play").submit(function(event) {
