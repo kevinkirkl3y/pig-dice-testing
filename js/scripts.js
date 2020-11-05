@@ -40,8 +40,8 @@ function rollDie(player) {
 $(document).ready(function() {
   $("form#enterName").submit(function(event) {
     event.preventDefault();
-    $("#nameOne").text($("input#playerOneName").val());
-    $("#nameTwo").text($("input#playerTwoName").val());
+    $(".nameOne").text($("input#playerOneName").val());
+    $(".nameTwo").text($("input#playerTwoName").val());
     $("#player2").hide();
     $("#player1").show();
   });
@@ -49,22 +49,24 @@ $(document).ready(function() {
     event.preventDefault();
     let roll = rollDie(player1);
     if (roll) {
-      alert(player1.currentRoll);
-      alert(player1.turnScore);
-      $("#rollResult-1").html(player1.currentRoll); 
-      $("#total-1").html(player1.turnScore);
+      $("#rollResult-1").html(" " + player1.currentRoll); 
+      $("#turnScore-1").html(" " + player1.turnScore);
     } else {
-      $("#rollResult-1").html(player1.currentRoll + ". Your turn is over");
-      $("#total-1").html(0);
+      $("#total-2").html(" " + player2.totalScore);
+      alert("You rolled a 1! Your turn is over...")
+      $("#rollResult-1").html(" ");
+      $("#turnScore-1").html(" ");
+      $("#total-1").html(player1.totalScore);
       $("#player1").hide();
       $("#player2").show();
     }
   });
   $("form#player1Hold").submit(function(event) {
     event.preventDefault();
-    $("#rollResult-1").html("You ended your turn.");
-    $("#total-1").html(player1.turnScore);
+    $("#rollResult-1").html(" ");
+    $("#turnScore-1").html(" ");
     player1.endTurn;
+    $("#total-1").html(player1.totalScore);
     $("#player1").hide();
     $("#player2").show();
   });
@@ -72,22 +74,23 @@ $(document).ready(function() {
     event.preventDefault();
     let roll = rollDie(player2);
     if (roll) {
-      alert(player2.currentRoll);
-      alert(player2.turnScore);
-      $("#rollResult-2").html(player2.currentRoll); 
-      $("#total-2").html(player2.turnScore);
+      $("#rollResult-2").html(" " + player2.currentRoll); 
+      $("#turnscore-2").html(" " + player2.turnScore);
     } else {
-      $("#rollResult-2").html(player2.currentRoll + ". Your turn is over"); 
-      $("#total-2").html(0);
+      alert("You rolled a 1! Your turn is over...")
+      $("#rollResult-2").html(" "); 
+      $("#turnScore-2").html(" ");
+      $("#total-2").html(player2.totalScore);
       $("#player2").hide();
       $("#player1").show();
     }
   });
   $("form#player2Hold").submit(function(event) {
     event.preventDefault();
-    $("#rollResult-2").html("You ended your turn."); 
-    $("#total-2").html(player2.turnScore);
-    player1.endTurn;
+    $("#rollResult-2").html(" ");
+    $("#turnScore-2").html(" "); 
+    player2.endTurn;
+    $("#total-2").html(player2.totalScore);
     $("#player2").hide();
     $("#player1").show();
   });

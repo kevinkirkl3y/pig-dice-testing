@@ -26,10 +26,10 @@
       <div class="row">
         <div class="col-6">
           <div id="player1">
-            <h1><span id="nameOne">Player 1</span></h1>
+            <h1><span class="nameOne">Player 1</span></h1>
             <p>Turn:</p>
-            <p>Turn Score:<span id="rollResult-1"></span></p>
-            <p>Total Score:<span id="total-1"></span></p>
+            <p>Roll:<span id="rollResult-1"></span></p>
+            <p>Turn Score:<span id="turnScore-1"></span></p>
             <form id="player1Play">
               <button type="submit" class="btn btn-outline-primary">Roll</button>
             </form>
@@ -40,16 +40,26 @@
         </div>
         <div class="col-6">
           <div id="player2">
-            <h1><span id="nameTwo">Player 2</span></h1>
+            <h1><span class="nameTwo">Player 2</span></h1>
             <p>Turn:</p>
-            <p>Turn Score:<span id="rollResult-2"></span></p>
-            <p>Total Score:<span id="total-2"></span></p>
+            <p>Roll:<span id="rollResult-2"></span></p>
+            <p>Turn Score:<span id="turnScore-2"></span></p>
             <form id="player2Play">
               <button type="submit" class="btn btn-outline-primary">Roll</button>
             </form>
             <form id="player2Hold">
             <button type="submit" class="btn btn-outline-primary">Hold</button>
             </form>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-6">
+            <h3><span class="nameOne">Player One</span> has a total of <span id="total-1">0</span> points.</h3>
+          </div>
+          <div class="col-6">
+            <h3><span class="nameTwo">Player 2</span> has a total of <span id="total-2">0</span> points.</h3>
           </div>
         </div>
       </div>
