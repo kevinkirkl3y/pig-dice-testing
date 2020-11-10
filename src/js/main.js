@@ -1,33 +1,12 @@
+import $ from 'jquery';
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './../css/styles.css';
+import Player from './player.js';
+import {rollDie} from './rollDie.js';
+
 let player1 = new Player();
-let player2 = new Player ();
-
-function Player() {
-  this.turnCount = 1;
-  this.turnScore = 0;
-  this.totalScore = 0;
-  this.currentRoll;
-}
-
-Player.prototype.endTurn = function() {
-  this.totalScore += this.turnScore;
-  this.turnCount++;
-  this.turnScore = 0;
-}
-
-function rollDie(player) {
-  let result = Math.floor(Math.random() * 6) + 1;
-  player.currentRoll = result;
-
-  if (result > 1) {
-    player.turnScore += result;
-    return true;
-  }
-  else {
-    player.turnScore = 0;
-    player.endTurn();
-    return false;
-  }
-}
+let player2 = new Player();
 
 function endTurnPlayerOne() {
   if (player1.totalScore >= 100) {
@@ -64,6 +43,7 @@ function endTurnPlayerTwo() {
 $(document).ready(function() {
   $("form#enterName").submit(function(event) {
     event.preventDefault();
+    
     $("#instructions").slideUp();
     $(".nameOne").text($("input#playerOneName").val());
     $(".nameTwo").text($("input#playerTwoName").val());
@@ -76,7 +56,6 @@ $(document).ready(function() {
   $("form#player1Play").submit(function(event) {
     event.preventDefault();
     let roll = rollDie(player1);
-
     if (roll) {
       $("#rollResult-1").html(" " + player1.currentRoll); 
       $("#turnScore-1").html(" " + player1.turnScore);
