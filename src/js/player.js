@@ -1,7 +1,7 @@
-export default function Player() {
+export default function Player(turnCount, turnScore, totalScore) {
   this.turnCount = 1;
-  this.turnScore = 0;
-  this.totalScore = 0;
+  this.turnScore = turnScore;
+  this.totalScore = totalScore;
   this.currentRoll;
 }
 

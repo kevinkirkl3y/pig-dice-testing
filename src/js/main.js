@@ -3,7 +3,7 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './../css/styles.css';
 import Player from './player.js';
-import {rollDie} from './rollDie.js';
+import { rollDie } from './rollDie.js';
 
 let player1 = new Player();
 let player2 = new Player();
