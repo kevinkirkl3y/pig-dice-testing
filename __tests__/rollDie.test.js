@@ -9,5 +9,12 @@ describe('rollDie', () => {
     expect(player.currentRoll).toBeGreaterThanOrEqual(1);
     expect(player.currentRoll).toBeLessThanOrEqual(6);
   });
-  test
+  test('this should recognize if the random number greater than 1', () => {
+    const player1 = new Player();
+    expect(rollDie(player1)).toEqual(true); 
+  });
+  test('this should recognize if the random number equals 1', () => {
+    const player2 = new Player();
+    expect(rollDie(player2)).toEqual(false);
+  });
 });
