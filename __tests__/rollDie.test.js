@@ -3,7 +3,7 @@ import Player from './../src/js/player';
 import { rollDie } from './../src/js/rollDie';
 describe('rollDie', () => {
 
-  test('this should return a random number', () => {
+  test('this should return a random number between 1 and 6', () => {
     const player = new Player();
     rollDie(player);
     expect(player.currentRoll).toBeGreaterThanOrEqual(1);
